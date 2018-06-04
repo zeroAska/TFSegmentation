@@ -10,7 +10,7 @@ num_channels: 3
 num_classes:  20
 
 # Train arguments
-num_epochs: 200
+num_epochs: 100
 batch_size: 8
 shuffle: True
 data_mode: "experiment"
