@@ -25,7 +25,7 @@
 #python3 main.py --load_config=fcn8s_mobilenet_train.yaml train Train FCN8sMobileNet
 
 #2- FCN8s MobileNet Test
-#python3 main.py --load_config=fcn8s_mobilenet_test.yaml test Train FCN8sMobileNet
+python3 main.py --load_config=fcn8s_mobilenet_test.yaml test Train FCN8sMobileNet
 #python3 main.py --load_config=fcn8s_mobilenet_test.yaml inference Train FCN8sMobileNet
 
 #3- UNet MobileNet Train Coarse+Fine
@@ -33,7 +33,8 @@
 #python3 main.py --load_config=unet_mobilenet_train.yaml train Train UNetMobileNet
 
 #4- UNet MobileNet Test 
-#python3 main.py --load_config=unet_mobilenet_test.yaml test Train UNetMobileNet
+#python3 main.py --load_config=unet_mobilenet_test.yaml inference Train UNetMobileNet
+
 #python3 main.py --load_config=unet_mobilenet_test.yaml inference Train UNetMobileNet
 
 #5- Dilation v1 MobileNet Train
@@ -45,12 +46,12 @@
 
 #7- Dilation v2 MobileNet Train 
 #python3 main.py --load_config=dilationv2_mobilenet_train.yaml train Train DilationV2MobileNet
-#python3 main.py --load_config=dilationv2_mobilenet_test.yaml test Train DilationV2MobileNet
+#python main.py --load_config=dilationv2_mobilenet_test.yaml test Train DilationV2MobileNet
 
 ###################################### ShuffleNet #################################################
 #1- FCN8s ShuffleNet Train Coarse+Fine
 #python3 main.py --load_config=fcn8s_shufflenet_traincoarse.yaml train Train FCN8sShuffleNet
-python3 main.py --load_config=fcn8s_shufflenet_train.yaml train Train FCN8sShuffleNet
+# python3 main.py --load_config=fcn8s_shufflenet_train.yaml train Train FCN8sShuffleNet
 
 #2- FCN8s ShuffleNet Test
 #python3 main.py --load_config=fcn8s_shufflenet_test.yaml test Train FCN8sShuffleNet
