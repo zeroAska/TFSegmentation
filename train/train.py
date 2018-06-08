@@ -795,8 +795,23 @@ class Train(BasicTrain):
         #        for n in tf.get_default_graph().as_graph_def().node:
         #            if 'input' in n.name:#if 'Argmax' in n.name:
         #                import pdb; pdb.set_trace()
+        gd = self.sess.graph.as_graph_def()
+        for node in gd.node:
+
+            if node.op == 'RefSwitch':
+                node.op = 'Switch'
+                for index in range(len(node.input)):
+                    if 'moving_' in node.input[index]:
+                        node.input[index] = node.input[index] + '/read'
+            elif node.op == 'AssignSub':
+                node.op = 'Sub'
+                if 'use_locking' in node.attr: del node.attr['use_locking']
+            elif node.op == 'AssignAdd':
+                node.op = 'Add'
+                if 'use_locking' in node.attr: del node.attr['use_locking']
+                
         print("Saving graph...")
-        tf.train.write_graph(self.sess.graph_def, ".", 'graph.pb')
+        tf.train.write_graph(gd, ".", 'graph.pb')
         print("Graph saved successfully.\n\n")
         exit(1)
 
