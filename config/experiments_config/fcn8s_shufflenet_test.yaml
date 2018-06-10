@@ -1,11 +1,11 @@
 # Directories arguments
 data_dir: "full_cityscapes_res"
-exp_dir:  "coarsepre_fcn8s_shufflenet"
+exp_dir:  "fcn8s_shufflenet"
 out_dir:  "fcn8s_shufflenet"
 
 # Data arguments
-img_height:   360
-img_width:    640
+img_height:   512
+img_width:    1024
 num_channels: 3
 num_classes:  20
 
